@@ -1,2 +1,2 @@
 # Component dependencies
-# component 'fields'
+component 'fields'

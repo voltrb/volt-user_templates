@@ -1,29 +1,52 @@
-# Volt::User::Templates
+# Volt User Templates
 
-TODO: Write a gem description
+Volt user templates provide out of the box templates for users to signup, login, and logout.  (Forgot password coming soon)
 
-## Installation
+### Install
 
-Add this line to your application's Gemfile:
+volt-user-templates now ships with volt, but if you have removed it, you can add it back with the following:
 
-    gem 'volt-user-templates'
+In your Gemfile, put:
 
-And then execute:
+```ruby
+gem 'volt-user-templates'
+```
 
-    $ bundle
+Then in any component you want to use the templates in, add the following to config/dependencies.rb
 
-Or install it yourself as:
+```ruby
+component 'user-templates'
+```
 
-    $ gem install volt-user-templates
+### Use
 
-## Usage
+You can use volt-user-template two different ways.
 
-TODO: Write usage instructions here
+1) You can add routes for it's templates
 
-## Contributing
+Add the following to your main components route file:
 
-1. Fork it ( http://github.com/[my-github-username]/volt-user-templates/fork )
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+```ruby
+get '/signup', _controller: 'user-templates', _action: 'signup'
+get '/login', _controller: 'user-templates', _action: 'login'
+```
+
+Now you can link to /signup and /login
+
+2) You can include the templates as tags:
+
+#### Login
+
+```html
+<:user-templates:login post-login-url="/" />
+```
+
+The login template takes an optional post-login-url that will be redirected to after a successful login.
+
+#### Signup
+
+```html
+<:user-templates:signup post-signup-url="/" />
+```
+
+Signup takes an optional post-signup-url that will be redirected to after signup.
