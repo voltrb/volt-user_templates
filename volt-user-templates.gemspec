@@ -11,7 +11,6 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Ryan Stout"]
   spec.email         = ["ryanstout@gmail.com"]
   spec.summary       = %q{Volt user templates provide out of the box templates for users to signup, login, and logout. }
-  spec.description   = %q{TODO: Write a longer description. Optional.}
   spec.homepage      = ""
   spec.license       = "MIT"
 
