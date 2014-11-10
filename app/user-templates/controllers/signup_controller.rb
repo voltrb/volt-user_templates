@@ -28,8 +28,7 @@ module UserTemplates
     end
 
     def use_username?
-      auth = Volt.config.auth
-      auth && auth.use_username
+      Volt.config.public.try(:auth).try(:use_username)
     end
 
   end
