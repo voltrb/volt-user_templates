@@ -29,6 +29,7 @@ Add the following to your main components route file:
 ```ruby
 get '/signup', _controller: 'user-templates', _action: 'signup'
 get '/login', _controller: 'user-templates', _action: 'login'
+get '/users/{{_index}}', _controller: 'user-templates', _action: 'user'
 ```
 
 Now you can link to /signup and /login

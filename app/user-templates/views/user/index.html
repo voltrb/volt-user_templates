@@ -1,0 +1,28 @@
+<:Title>
+  Users
+
+<:Body>
+  <div class="row">
+    <div class="col-md-4">
+      <ul class="list-group">
+        {{ _users.each do |user| }}
+        <li class="list-group-item {{ if params._index == user._id }}active{{ end }}" e-click="params._index = user._id">
+          <span class="badge" e-click="self._users.delete_at(index)">X</span>
+          {{ user._name }}
+        </li>
+        {{ end }}
+      </ul>
+    </div>
+
+    <div class="col-md-8">
+      {{ if selected_user }}
+        <:fields:text value="{{ selected_user._name }}" label="Full Name" />
+        {{ if use_username? }}
+          <:fields:text value="{{ selected_user._username }}" />
+        {{ else }}
+          <:fields:text value="{{ selected_user._email }}" />
+        {{ end}}
+        <:fields:text type="password" value="{{ selected_user._password }}" />
+      {{ end }}
+    </div>
+  </div>
