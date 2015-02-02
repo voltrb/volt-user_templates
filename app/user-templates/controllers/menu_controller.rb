@@ -4,5 +4,10 @@ module UserTemplates
       user = Volt.user
       user._name.or(user._email).or(Volt.user._username)
     end
+
+    def do_logout
+      Volt.logout
+      go('/')
+    end
   end
 end
