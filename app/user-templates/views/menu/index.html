@@ -9,10 +9,10 @@
       </a>
       <ul class="dropdown-menu" role="menu">
         <li>
-          <a href="/account">Account</a>
+          <a href="/users/{{ Volt.user._id }}">Account</a>
         </li>
         <li class="divider"></li>
-        <li><a e-click="Volt.logout">Logout</a></li>
+        <li><a e-click="do_logout">Logout</a></li>
       </ul>
     </li>
   {{ else }}
