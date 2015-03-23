@@ -1,5 +1,3 @@
-require "volt/user/templates/version"
-
 class Volt
   class User
     class Templates
