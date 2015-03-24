@@ -11,7 +11,8 @@ module UserTemplates
         self.login = ''
         self.password = ''
 
-        go(attrs.post_login_url.or('/'))
+        post_login_url = params._post_login_url || attrs.post_login_url
+        go(post_login_url.or('/'))
 
         nil
       end.fail do |errors|
