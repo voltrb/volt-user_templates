@@ -12,7 +12,7 @@ module UserTemplates
       save!.then do |result|
         flash._notices << "Signup successful"
 
-        post_signup_url = attrs.post_signup_url.or('/')
+        post_signup_url = attrs.post_signup_url || '/'
 
         # On a successful signup, then login
         Volt.login(login, password).then do
