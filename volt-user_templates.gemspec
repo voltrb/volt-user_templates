@@ -6,7 +6,7 @@ version = File.read(File.expand_path('../VERSION', __FILE__)).strip
 
 
 Gem::Specification.new do |spec|
-  spec.name          = "volt-user-templates"
+  spec.name          = "volt-user_templates"
   spec.version       = version
   spec.authors       = ["Ryan Stout"]
   spec.email         = ["ryanstout@gmail.com"]
