@@ -17,7 +17,7 @@ module UserTemplates
         # On a successful signup, then login
         Volt.login(login, password).then do
           # Redirect to post signup url
-          go post_signup_url
+          redirect_to post_signup_url
         end.fail do |errors|
           # Show the error (probably only the server goes down)
           flash._errors << errors.to_s

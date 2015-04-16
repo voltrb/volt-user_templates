@@ -16,7 +16,7 @@
       </ul>
     </li>
   {{ else }}
-    <li>
+    <li class="{{ if is_active? }}active{{ end }}">
       <a href="/login">
         <span class="glyphicon glyphicon-user"></span>
         Login

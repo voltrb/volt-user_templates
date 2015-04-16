@@ -5,5 +5,9 @@ module UserTemplates
         user._name || user._email || user._username
       end
     end
+
+    def is_active?
+      url.path.split('/')[1] == 'login'
+    end
   end
 end
