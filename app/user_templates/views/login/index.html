@@ -20,11 +20,11 @@
                 Email
               {{ end }}
             </label>
-            <input class="form-control" type="text" value="{{ login }}">
+            <input class="form-control" type="text" value="{{ login }}" autofocus />
           </div>
 
           <div class="form-group">
-            <label class="control-label">Password</label>
+            <label class="control-label">Password <small style="font-weight: normal;">(<a href="{{ forgot_url }}">forgot password</a>)</small></label>
             <input class="form-control" type="password" value="{{ password }}">
           </div>
 

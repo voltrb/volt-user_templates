@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.name          = "volt-user_templates"
   spec.version       = version
   spec.authors       = ["Ryan Stout"]
-  spec.email         = ["ryanstout@gmail.com"]
+  spec.email         = ["ryan@agileproductions.com"]
   spec.summary       = %q{Volt user templates provide out of the box templates for users to signup, login, and logout. }
   spec.homepage      = ""
   spec.license       = "MIT"
@@ -20,5 +20,6 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_dependency "volt-fields", "~> 0.1.0"
+  spec.add_dependency "volt-mailer", "~> 0.0.2"
   spec.add_development_dependency "rake"
 end

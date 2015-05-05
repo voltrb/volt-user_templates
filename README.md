@@ -4,18 +4,18 @@ Volt user templates provide out of the box templates for users to signup, login,
 
 ## Install
 
-volt-user-templates now ships with volt, but if you have removed it, you can add it back with the following:
+volt-user_templates now ships with volt, but if you have removed it, you can add it back with the following:
 
 In your Gemfile, put:
 
 ```ruby
-gem 'volt-user-templates'
+gem 'volt-user_templates'
 ```
 
 Then in any component you want to use the templates in, add the following to config/dependencies.rb
 
 ```ruby
-component 'user-templates'
+component 'user_templates'
 ```
 
 ## Use
@@ -27,8 +27,9 @@ You can use volt-user-template two different ways.
 Add the following to your main components route file:
 
 ```ruby
-get '/signup', _controller: 'user-templates', _action: 'signup'
-get '/login', _controller: 'user-templates', _action: 'login'
+client '/signup', component: 'user_templates', controller: 'signup'
+client '/forgot', component: 'user_templates', controller: 'login', action: 'forgot'
+client '/login', component: 'user_templates', controller: 'login', action: 'index'
 ```
 
 Now you can link to /signup and /login
@@ -38,7 +39,7 @@ Now you can link to /signup and /login
 ### Login
 
 ```html
-<:user-templates:login post-login-url="/" />
+<:user_templates:login post-login-url="/" />
 ```
 
 The login template takes an optional post-login-url that will be redirected to after a successful login.
@@ -46,15 +47,21 @@ The login template takes an optional post-login-url that will be redirected to a
 ### Signup
 
 ```html
-<:user-templates:signup post-signup-url="/" />
+<:user_templates:signup post-signup-url="/" />
 ```
 
 Signup takes an optional post-signup-url that will be redirected to after signup.
 
-### Logout
-
-volt-user-templates provides a nav bar tag that provides a login/logout link and shows the users name.
+### Forgot
 
 ```html
-<:user-templates:menu />
+<:user_templates:login:forgot post-forgot-url="/login" />
+```
+
+### Logout
+
+volt-user_templates provides a nav bar tag that provides a login/logout link and shows the users name.
+
+```html
+<:user_templates:menu />
 ```
