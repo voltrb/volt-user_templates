@@ -12,7 +12,7 @@ module UserTemplates
         self.login = ''
         self.password = ''
 
-        redirect_to(params.post_login_url || '/')
+        redirect_to(params._post_login_url || '/')
 
         nil
       end.fail do |errors|
@@ -29,7 +29,7 @@ module UserTemplates
       UserTemplateTasks.send_reset_email(reset_email).then do
         self.reset_email = ''
         flash._notices << 'Reset email sent.'
-        redirect_to(attrs.post_forgot_url || '/login')
+        redirect_to(params._post_forgot_url || '/login')
       end.fail do |err|
         flash._errors << err.to_s
       end
