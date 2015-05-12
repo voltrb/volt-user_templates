@@ -12,7 +12,7 @@ module UserTemplates
         self.login = ''
         self.password = ''
 
-        redirect_to(attrs.post_login_url || '/')
+        redirect_to(params.post_login_url || '/')
 
         nil
       end.fail do |errors|
