@@ -6,19 +6,23 @@ module UserTemplates
     reactive_accessor :reset_email
 
     def do_login
-      Volt.login(login, password).then do
+      Volt.login(login, password).then do |res|
         # Successful login, clear out the form
         self.errors = nil
         self.login = ''
         self.password = ''
 
-        redirect_to(attrs.post_login_url || '/')
+        after_login
 
         nil
       end.fail do |errors|
         # Login fail
         self.errors = errors
       end
+    end
+
+    def after_login
+      redirect_to(attrs.post_login_url || '/')
     end
 
     def forgot_url

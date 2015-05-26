@@ -20,7 +20,7 @@
                       <h1 style="font-size: 20px; margin: 0; color: #333;"> Hello {{ name }}, </h1>
                       <p style="font: 15px/1.25em 'Helvetica Neue', Arial, Helvetica; color: #333;"> We heard you needed to reset your password. Click the button below and you'll be redirected to a page where you can reset your password.</p>
                       <p style="font: 15px/1.25em 'Helvetica Neue', Arial, Helvetica; margin-bottom: 0; text-align: center; color: #333;">
-                        <a href="" style="border-radius: 3px; -moz-border-radius: 3px; -webkit-border-radius: 3px; background: #5cb85c; color: #fff; cursor: pointer; display: block; font-weight: 700; font-size: 16px; line-height: 1.25em; margin: 24px auto 24px; padding: 10px 18px; text-decoration: none; width: 180px; text-align: center;"> Reset Password </a>
+                        <a href="{{ reset_url }}" style="border-radius: 3px; -moz-border-radius: 3px; -webkit-border-radius: 3px; background: #5cb85c; color: #fff; cursor: pointer; display: block; font-weight: 700; font-size: 16px; line-height: 1.25em; margin: 24px auto 24px; padding: 10px 18px; text-decoration: none; width: 180px; text-align: center;"> Reset Password </a>
                       </p>
                     </td>
                   </tr>
@@ -38,4 +38,4 @@ Hey {{ name }},
 
 We heard you needed to reset your password. Go to the following url to reset your password:
 
-http://www.someurl.com/
+{{ reset_url }}

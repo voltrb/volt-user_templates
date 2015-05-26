@@ -12,12 +12,9 @@ module UserTemplates
       save!.then do |result|
         flash._notices << "Signup successful"
 
-        post_signup_url = attrs.post_signup_url || '/'
-
         # On a successful signup, then login
         Volt.login(login, password).then do
-          # Redirect to post signup url
-          redirect_to post_signup_url
+          after_signup
         end.fail do |errors|
           # Show the error (probably only the server goes down)
           flash._errors << errors.to_s
@@ -25,6 +22,13 @@ module UserTemplates
       end.fail do |err|
         puts "ERR: #{err.inspect}"
       end
+    end
+
+    def after_signup
+      post_signup_url = attrs.post_signup_url || '/'
+
+      # Redirect to post signup url
+      redirect_to post_signup_url
     end
 
     def use_username?
