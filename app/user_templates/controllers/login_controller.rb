@@ -4,6 +4,7 @@ module UserTemplates
     reactive_accessor :login
     reactive_accessor :password
     reactive_accessor :reset_email
+    reactive_accessor :new_password
 
     def do_login
       Volt.login(login, password).then do |res|

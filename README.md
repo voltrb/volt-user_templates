@@ -28,6 +28,7 @@ Add the following to your main components route file:
 
 ```ruby
 client '/signup', component: 'user_templates', controller: 'signup'
+client '/password_reset', component: 'user_templates', controller: 'password_reset', action: 'index'
 client '/forgot', component: 'user_templates', controller: 'login', action: 'forgot'
 client '/login', component: 'user_templates', controller: 'login', action: 'index'
 ```
