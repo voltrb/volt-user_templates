@@ -4,7 +4,7 @@ class UserTemplateTasks < Volt::Task
   def send_reset_email(email)
     # Find user by e-mail
     Volt.skip_permissions do
-      store._users.where(email: email).fetch_first do |user|
+      store._users.where(email: email).first do |user|
         if user
           reset_token = password_reset_token(user.id)
 
