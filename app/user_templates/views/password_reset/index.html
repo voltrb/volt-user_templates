@@ -2,9 +2,24 @@
   Reset Password
 
 <:Body>
-  <h1>Reset Password</h1>
+   <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <div class="span4 offset4 well">
+        <legend>Reset Your Password</legend>
 
-  <form e-click="reset_password">
-    <:fields:password label="New Password" value="{{ new_password }}" />
-    <button>Reset Password</button>
-  </form>
+        <form e-submit="reset_password">
+          {{ if errors.present? }}
+            <div class="alert alert-danger">{{ errors }}</div>
+          {{ end }}
+
+          <div class="form-group">
+            <label class="control-label">New Password</label>
+            <:fields:text type="password" label="false" value="{{ user.password }}" />
+          </div>
+
+          <button class="btn btn-info btn-block">Reset Password</button>
+        </form>
+      </div>
+    </div>
+  </div>
+

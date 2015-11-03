@@ -36,7 +36,7 @@ module UserTemplates
         flash._notices << 'Reset email sent.'
         redirect_to(attrs.post_forgot_url || '/login')
       end.fail do |err|
-        flash._errors << err.to_s
+        flash._errors << err.message
       end
     end
 
