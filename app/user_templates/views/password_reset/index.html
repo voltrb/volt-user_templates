@@ -14,7 +14,7 @@
 
           <div class="form-group">
             <label class="control-label">New Password</label>
-            <input type="password" value="{{ user.password }}" />
+            <:fields:text type="password" label="false" value="{{ user.password }}" />
           </div>
 
           <button class="btn btn-info btn-block">Reset Password</button>
