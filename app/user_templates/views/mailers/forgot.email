@@ -2,6 +2,7 @@
   Reset your Password
 
 <:Html>
+  <a href="{{ reset_url }}">Some Url</a>
   <html>
     <body>
       <table cellspacing="0" cellpadding="0" border="0" style="color: #333; background: #fff; padding: 0; margin: 0; width: 100%; font: 15px/1.25em 'Helvetica Neue', Arial, Helvetica;">

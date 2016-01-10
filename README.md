@@ -31,6 +31,7 @@ client '/signup', component: 'user_templates', controller: 'signup'
 client '/password_reset', component: 'user_templates', controller: 'password_reset', action: 'index'
 client '/forgot', component: 'user_templates', controller: 'login', action: 'forgot'
 client '/login', component: 'user_templates', controller: 'login', action: 'index'
+client '/account', component: 'user_templates', controller: 'account', action: 'index'
 ```
 
 Now you can link to /signup and /login
