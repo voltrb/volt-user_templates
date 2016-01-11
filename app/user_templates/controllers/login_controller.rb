@@ -18,7 +18,11 @@ module UserTemplates
         nil
       end.fail do |errors|
         # Login fail
-        self.errors = errors
+        if errors.is_a?(VoltUserError)
+          self.errors = 'Unable to login with that information.'
+        else
+          self.errors = errors
+        end
       end
     end
 

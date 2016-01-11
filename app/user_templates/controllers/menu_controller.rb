@@ -11,6 +11,11 @@ module UserTemplates
       end
     end
 
+    def logout
+      Volt.logout
+      redirect_to('/login')
+    end
+
     def is_active?
       url.path.split('/')[1] == 'login'
     end
